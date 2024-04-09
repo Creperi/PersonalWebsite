@@ -16,11 +16,23 @@ module.exports = {
     hot: true
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: 'src/index.html' })
+    new HtmlWebpackPlugin({ 
+      template: 'src/dist/index.html',
+      filename: 'index.html',
+    })
   ],
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
+  mode: 'development',
+  output: {
+    clean: true
+  },
+  devServer: {
+    contentBase: './dist',
+    open: true
+  },
+
   module: {
     rules: [
       {
