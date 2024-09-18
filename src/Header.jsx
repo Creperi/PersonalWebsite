@@ -1,17 +1,21 @@
 import React from "react";
-import { Icon } from "./Icon";
-export default function Header(){
-    return(<header>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="navbar-brand" href="#">Navbar</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+import { ReactComponent as GithubIcon } from "bootstrap-icons/icons/github.svg";
+import { ReactComponent as LinkedinIcon } from "bootstrap-icons/icons/linkedin.svg";
+import { ReactComponent as DiscordIcon } from "bootstrap-icons/icons/discord.svg";
+export default function Header() {
+    return (<header>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+            <div className="container-fluid">
+            <a className="navbar-brand" href="#">Elias P.</a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
+
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                        <a className="nav-link" href="#">Home <span className="visually-hidden">(current)</span></a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">Experience</a>
@@ -26,22 +30,27 @@ export default function Header(){
                         <a className="nav-link" href="#">Contact</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link disabled" href="#">Disabled</a>
+                        <ul className="navbar-nav flex-row flex-wrap ms-md-auto">
+                            <li className="nav-item">
+                                <a className="nav-link" href="https://github.com/Creperi">
+                                    <GithubIcon width="24" height="24" />
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="https://www.linkedin.com/in/elias-poniridis-625b0a1b8/">
+                                    <LinkedinIcon width="24" height="24" />
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="https://www.linkedin.com/in/elias-poniridis-625b0a1b8/">
+                                    <DiscordIcon width="24" height="24" />
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
-            <ul className="navbar-nav flex-row flex-wrap ms-md-auto">
-                <li className="nav-item">
-                    <a className="nav-link" href="https://github.com/Creperi">
-                        <Icon path="../node_modules/bootstrap-icons/icons/github.svg"/>
-                    </a>
-                </li>    
-                <li className="nav-item">
-                    <a className="nav-link" href="https://www.linkedin.com/in/elias-poniridis-625b0a1b8/">
-                        <Icon path="../node_modules/bootstrap-icons/icons/linkedin.svg"/>
-                    </a>
-                </li>
-            </ul>
-        </nav> 
+            </div>
+        </nav>
     </header>)
 }

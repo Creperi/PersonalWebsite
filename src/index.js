@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "./style.scss";
-import * as bootstrap from 'bootstrap'
-import _ from 'lodash';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-const el = document.getElementById("app");
-
-ReactDOM.render(<App />, el);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

@@ -1,22 +1,19 @@
 import React from "react";
 import './style.scss'
 import PortfolioItem from "./PortfolioItem";
+import { projectData } from "./data";
 export default function Projects() {
-    return (
-        <div className="container" id="projects">
-  <h1 className="display-2 mx-3 text-center">Projects</h1>
-  <div className="row portfolio-gallery">
-      <PortfolioItem/>
-    <div className="col-md-4">
-      <div className="card">
-        <img src="https://via.placeholder.com/300" className="card-img-top" alt="Project 2"/>
-        <div className="card-body">
-          <h5 className="card-title">Project 2</h5>
-          <p className="card-text">Description of Project 2</p>
-          <a href="#" className="btn btn-primary">View Project</a>
-        </div>
+  let games = projectData.filter(project => project.type === "game")
+  let applications = projectData.filter(project => project.type === "application")
+  return (
+    <div className="container" id="projects">
+      <h1 className="display-2 mx-3 text-center">Projects</h1>
+      <div className="row portfolio-gallery">
+        <h1 className="text-center">Games</h1>
+        {games.map(game => <PortfolioItem key={game.id} imageUrl={game.imageUrl} title={game.title} description={game.description} />)}
+        <h1 className="text-center">Applications and Websites</h1>
+        {applications.map(application => <PortfolioItem key={application.id} imageUrl={application.imageUrl} title={application.title} description={application.description} />)}
       </div>
-    </div>
-  </div>
-  </div>)
+      <a href="" download="Elias_Poniridis-Resume.pdf" className="btn btn-primary">View my CV</a>
+    </div>)
 }
