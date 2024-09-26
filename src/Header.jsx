@@ -2,6 +2,7 @@ import React from "react";
 import { ReactComponent as GithubIcon } from "bootstrap-icons/icons/github.svg";
 import { ReactComponent as LinkedinIcon } from "bootstrap-icons/icons/linkedin.svg";
 import { ReactComponent as DiscordIcon } from "bootstrap-icons/icons/discord.svg";
+import { ReactComponent as ItchIoIcon} from './assets/itchio-textless-black.svg'
 export default function Header() {
     return (<header>
         <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
@@ -44,6 +45,11 @@ export default function Header() {
                             <li className="nav-item">
                                 <a className="nav-link" href="https://www.linkedin.com/in/elias-poniridis-625b0a1b8/">
                                     <DiscordIcon width="24" height="24" />
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="https://arpacola.itch.io/">
+                                    <ItchIoIcon width="24" height="24" fill="#212529bf"/>
                                 </a>
                             </li>
                         </ul>

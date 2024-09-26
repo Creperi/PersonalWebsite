@@ -4,7 +4,6 @@ export default function AboutMe(props){
 
     <div>
         <div className="col-md-6 col-sm">
-        <h1 className="display-2 mx-3 text-center">About Me</h1>
     <p className="text-dark text-left mx-3">
         Hello, I'm Elias Poniridis.
         </p>

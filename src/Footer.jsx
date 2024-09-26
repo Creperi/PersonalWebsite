@@ -4,6 +4,7 @@ import { ReactComponent as LinkedinIcon } from "bootstrap-icons/icons/linkedin.s
 import { ReactComponent as DiscordIcon } from "bootstrap-icons/icons/discord.svg";
 import { ReactComponent as TelephoneIcon } from "bootstrap-icons/icons/telephone.svg";
 import { ReactComponent as MailboxIcon } from "bootstrap-icons/icons/mailbox.svg";
+import { ReactComponent as ItchIoIcon} from './assets/itchio-textless-black.svg'
 
 export default function Footer(){
     return (<div className="container">
@@ -24,6 +25,7 @@ export default function Footer(){
             <li className="ms-3"><a className="text-body-secondary" href="https://www.linkedin.com/in/elias-poniridis-625b0a1b8/"><LinkedinIcon width="24" height="24" /></a></li>
             <li className="ms-3"><a className="text-body-secondary" href="https://github.com/Creperi"><GithubIcon width="24" height="24" /></a></li>
             <li className="ms-3"><a className="text-body-secondary" href="#"><DiscordIcon width="24" height="24" /></a></li>
+            <li className="ms-3"><a className="text-body-secondary" href="https://arpacola.itch.io/"><ItchIoIcon width="24" height="24" color="#212529bf"/></a></li>
       </ul>
     </footer>
   </div>)
