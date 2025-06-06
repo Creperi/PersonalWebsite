@@ -1,9 +1,18 @@
-import React from "react";
+import {useState, React} from "react";
 import { ReactComponent as GithubIcon } from "bootstrap-icons/icons/github.svg";
 import { ReactComponent as LinkedinIcon } from "bootstrap-icons/icons/linkedin.svg";
 import { ReactComponent as DiscordIcon } from "bootstrap-icons/icons/discord.svg";
 import { ReactComponent as ItchIoIcon} from './assets/itchio-textless-black.svg'
+import { useFloating, useHover, useInteractions } from "@floating-ui/react";
 export default function Header() {
+    const [isOpen, setIsOpen] = useState(false);
+    const { refs, floatingStyles, context } = useFloating({
+        open: isOpen,
+        onOpenChange: setIsOpen
+    });
+    const hover = useHover(context);
+    const { getReferenceProps, getFloatingProps } = useInteractions([hover]);
+
     return (<header>
         <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
             <div className="container-fluid">
@@ -42,10 +51,18 @@ export default function Header() {
                                     <LinkedinIcon width="24" height="24" />
                                 </a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="https://www.linkedin.com/in/elias-poniridis-625b0a1b8/">
+                                <li className="nav-item" ref={refs.setReference} {...getReferenceProps()}>
                                     <DiscordIcon width="24" height="24" />
-                                </a>
+                                    {isOpen && (
+                                        <div
+                                            className="floating"
+                                            ref={refs.setFloating}
+                                            style={floatingStyles}
+                                            {...getFloatingProps()}
+                                        >
+                                            gatoni261
+                                        </div>
+                                    )}
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="https://arpacola.itch.io/">

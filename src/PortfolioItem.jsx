@@ -8,7 +8,14 @@ export default function PortfolioItem({imageUrl, title, description, link}) {
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">{description}</p>
-                    <a href={link} className="btn btn-primary">Visit project</a>
+                    <div className="row">
+                        <div className="col">
+                            <a href={link} className="btn btn-primary">View more</a>
+                        </div>
+                        <div className="col">
+                            <a href={link} className="btn btn-primary">Visit project</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

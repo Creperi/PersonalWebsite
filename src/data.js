@@ -31,6 +31,11 @@ export const projectData = [{
     link: 'https://esaltzherr.itch.io/barn-defense'
 },
 {
+    id: 4,
+    imageUrl: "https://img.itch.zone/aW1nLzE3NzgxMzMxLnBuZw==/315x250%23c/Qn4%2FDe.png",
+    title: 'Antiques App',
+    type: 'application',
+    link: 'https://esaltzherr.itch.io/barn-defense'
+},
 
-}
 ]

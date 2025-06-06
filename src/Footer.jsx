@@ -1,12 +1,19 @@
-import React from "react";
+import {useState, React} from "react";
 import { ReactComponent as GithubIcon } from "bootstrap-icons/icons/github.svg";
 import { ReactComponent as LinkedinIcon } from "bootstrap-icons/icons/linkedin.svg";
 import { ReactComponent as DiscordIcon } from "bootstrap-icons/icons/discord.svg";
 import { ReactComponent as TelephoneIcon } from "bootstrap-icons/icons/telephone.svg";
 import { ReactComponent as MailboxIcon } from "bootstrap-icons/icons/mailbox.svg";
 import { ReactComponent as ItchIoIcon} from './assets/itchio-textless-black.svg'
-
+import { useFloating, useHover, useInteractions } from "@floating-ui/react";
 export default function Footer(){
+      const [isOpen, setIsOpen] = useState(false);
+      const { refs, floatingStyles, context } = useFloating({
+          open: isOpen,
+          onOpenChange: setIsOpen
+      });
+      const hover = useHover(context);
+      const { getReferenceProps, getFloatingProps } = useInteractions([hover]);
     return (<div className="container">
     <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
       <div className="col-md-4 col-xs d-flex align-items-center-xs text-xs-center">
@@ -24,7 +31,19 @@ export default function Footer(){
       <ul className="nav col-md-4 col-xs list-unstyled d-flex justify-content-end">
             <li className="ms-3"><a className="text-body-secondary" href="https://www.linkedin.com/in/elias-poniridis-625b0a1b8/"><LinkedinIcon width="24" height="24" /></a></li>
             <li className="ms-3"><a className="text-body-secondary" href="https://github.com/Creperi"><GithubIcon width="24" height="24" /></a></li>
-            <li className="ms-3"><a className="text-body-secondary" href="#"><DiscordIcon width="24" height="24" /></a></li>
+          <li className="ms-3" ref={refs.setReference} {...getReferenceProps()}>
+            <DiscordIcon width="24" height="24" />
+            {isOpen && (
+              <div
+                className="floating"
+                ref={refs.setFloating}
+                style={floatingStyles}
+                {...getFloatingProps()}
+              >
+                gatoni261
+              </div>
+            )}
+          </li>
             <li className="ms-3"><a className="text-body-secondary" href="https://arpacola.itch.io/"><ItchIoIcon width="24" height="24" color="#212529bf"/></a></li>
       </ul>
     </footer>
